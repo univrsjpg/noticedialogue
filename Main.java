@@ -16,7 +16,7 @@ public class Main {
         UIManager.put("OptionPane.messageFont", new Font("Inter", Font.PLAIN, 16));
 
         // custom icon
-        ImageIcon icon = new ImageIcon("src/stuff/envelope.png");
+        ImageIcon icon = new ImageIcon("stuff/envelope.png");
         icon.setImage(icon.getImage().getScaledInstance(100, 125, Image.SCALE_SMOOTH));
 
         // Dialog loop
@@ -39,7 +39,7 @@ public class Main {
         } while (result == JOptionPane.NO_OPTION || result == JOptionPane.CANCEL_OPTION);   // bawal mag no dito boi
 
         if (result == JOptionPane.YES_OPTION) {
-            playMusic("src/stuff/careless_whisper.wav");    // music LOLL
+            playMusic("stuff/careless_whisper.wav");    // music LOLL
             JOptionPane.showMessageDialog(
                     null,
                     "i like you too ;)",    // yieeeeee cute naman anyway escucha las palabras de
