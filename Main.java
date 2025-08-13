@@ -1,8 +1,8 @@
-import javax.swing.*;
 import java.awt.*;
-import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
+import javax.sound.sampled.*;
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class Main {
         // Dialog loop
         String title = "NOTICE";
         String message = "do you like me?";
-        Object[] options = {"Yes", "No", "Cancel"};
+        Object[] options = {"yes", "no", "cancel"};
 
         int result;
         do {
@@ -34,7 +34,7 @@ public class Main {
                     JOptionPane.QUESTION_MESSAGE,
                     icon,
                     options,
-                    options[2]
+                    options[0]
             );
         } while (result == JOptionPane.NO_OPTION || result == JOptionPane.CANCEL_OPTION);   // bawal mag no dito boi
 
@@ -61,8 +61,11 @@ public class Main {
             AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(musicFile));
             clip.open(inputStream);
             clip.start();
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            e.printStackTrace();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {    // lock in bro
+            System.out.println("\nbro the music file is not supported or not found");
+            System.out.println("make sure the file exists in the correct path or is in .wav format");
+            System.out.println("error: " + e.getMessage());
+            System.err.println("\nDONT FUMBLE THIS LIL BRO.");
         }
     }
 }
